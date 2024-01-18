@@ -18,7 +18,7 @@ import java.util.Random;
  * @date 2024/1/16 21:11
  * @description 在1秒内（随机的小于等于1秒）读取一行t0116.txt的数据，统计5秒内行数据全是小写英文的单词数量。
  */
-public class TestDemo {
+public class TumblingProcessTest {
 
     // 小于等于1秒生成读取文本数据
     public static class RandomIntSource implements SourceFunction<String> {

@@ -21,7 +21,7 @@ import java.util.Random;
  * @description 滚动窗口求和 + 水位线
  * waterMark = 当前窗口最大时间 - 最大允许的延迟时间
  */
-public class Test {
+public class WatermarkTest {
 
 
     @Data

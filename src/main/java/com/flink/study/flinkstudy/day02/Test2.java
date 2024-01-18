@@ -13,9 +13,9 @@ public class Test2 {
 
 
     public static void main(String[] args) throws Exception {
-        MyUserSource myUserSource = new MyUserSource();
+        RichParallelSourceTest richParallelSourceTest = new RichParallelSourceTest();
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        DataStream<User> ds = env.addSource(myUserSource).setParallelism(4);  //setParallelism同时启动多个线程
+        DataStream<User> ds = env.addSource(richParallelSourceTest).setParallelism(4);  //setParallelism同时启动多个线程
         ds.print();
         env.execute();
     }

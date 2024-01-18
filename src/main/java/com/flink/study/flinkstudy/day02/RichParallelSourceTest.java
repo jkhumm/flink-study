@@ -11,7 +11,7 @@ import java.util.Random;
  */
 
 @Data
-public class MyUserSource extends RichParallelSourceFunction<User> {
+public class RichParallelSourceTest extends RichParallelSourceFunction<User> {
         boolean flag = true;
         @Override
         public void run(SourceContext<User> sourceContext) throws InterruptedException {

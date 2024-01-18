@@ -15,7 +15,7 @@ import java.util.Random;
  * @date 2024/1/16 21:11
  * @description 滚动窗口 + 滑动窗口
  */
-public class time_gundong {
+public class SlidingProcessTest {
 
     // 每秒生成一个参数，整数的范围是1-10，持续生成它们
     public static class RandomIntSource implements SourceFunction<Integer> {
