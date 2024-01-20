@@ -16,9 +16,9 @@ import org.apache.flink.util.Collector;
 /**
  * @author humingming
  * @date 2024/1/18 21:04
- * @description
+ * @description 键控状态之valueState
  */
-public class KeyedProcessTest {
+public class ValueStateTest {
     /**
      * 状态：用于存储和访问流处理中的中间和结果值的
      * 键控状态：keyed State
