@@ -1,4 +1,4 @@
-package com.flink.study.flinkstudy.day07;
+package com.flink.study.flinkstudy.day06;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;

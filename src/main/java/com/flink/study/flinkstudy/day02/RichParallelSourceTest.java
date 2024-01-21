@@ -1,17 +1,32 @@
 package com.flink.study.flinkstudy.day02;
 
 import lombok.Data;
+import org.apache.flink.streaming.api.datastream.DataStream;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.source.RichParallelSourceFunction;
 
 import java.util.Random;
 
 
 /**
- * RichParallelSourceFunction:多功能并行数据源(并行度能够>=1)，这是用的最多的方法
+ * @author humingming
+ * @date 2024/1/11 22:14
+ * @description 实现每隔5秒钟，随机的刷新4条用户数据，用户数据中包括随机的名字、随机的年龄和随机的性别
  */
+public class RichParallelSourceTest {
 
-@Data
-public class RichParallelSourceTest extends RichParallelSourceFunction<User> {
+    @Data
+    public static class User {
+        private String name;
+        private Integer age;
+        private String sex;
+    }
+
+    /**
+     * RichParallelSourceFunction:多功能并行数据源(并行度能够>=1)，这是用的最多的方法
+     */
+    @Data
+    public static class RichParallelSourceRandom extends RichParallelSourceFunction<User> {
         boolean flag = true;
         @Override
         public void run(SourceContext<User> sourceContext) throws InterruptedException {
@@ -41,11 +56,20 @@ public class RichParallelSourceTest extends RichParallelSourceFunction<User> {
             }
         }
 
-    @Override
-    public void cancel() {
-        System.out.println("-----------------stop---------------");
-        flag=false;
+        @Override
+        public void cancel() {
+            System.out.println("-----------------stop---------------");
+            flag=false;
+        }
+
+
     }
 
+    public static void main(String[] args) throws Exception {
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        DataStream<User> ds = env.addSource(new RichParallelSourceRandom()).setParallelism(4);  //setParallelism同时启动多个线程
+        ds.print();
+        env.execute();
+    }
 
 }
