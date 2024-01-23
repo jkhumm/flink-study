@@ -1,4 +1,4 @@
-package com.flink.study.flinkstudy.dya08;
+package com.flink.study.flinkstudy.day08;
 
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

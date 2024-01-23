@@ -1,4 +1,4 @@
-package com.flink.study.flinkstudy.dya08;
+package com.flink.study.flinkstudy.day08;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

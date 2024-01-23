@@ -1,4 +1,4 @@
-package com.flink.study.flinkstudy.dya08.kafka;
+package com.flink.study.flinkstudy.day08.kafka;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

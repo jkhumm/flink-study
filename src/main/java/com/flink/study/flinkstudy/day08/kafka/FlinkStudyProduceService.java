@@ -1,4 +1,4 @@
-package com.flink.study.flinkstudy.dya08.kafka;
+package com.flink.study.flinkstudy.day08.kafka;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
