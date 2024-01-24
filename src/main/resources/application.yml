@@ -1,13 +1,11 @@
 spring:
   kafka:
-    bootstrap-servers: 172.16.50.203:9090,172.16.50.203:9091,172.16.50.203:9092
+    bootstrap-servers: 192.168.222.132:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
     consumer:
       group-id: group1
       auto-offset-reset: latest
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
       enable-auto-commit: true
       auto-commit-interval: 3000
