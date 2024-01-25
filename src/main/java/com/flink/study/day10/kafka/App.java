@@ -1,6 +1,6 @@
-package com.flink.study;
+package com.flink.study.day10.kafka;
 
-import com.flink.study.day10.kafka.FlinkStudyProduceService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @Author: humingming
  * @Time: 2024/1/22 18:11
  */
+@Slf4j
 @SpringBootApplication
 public class App {
 
@@ -20,7 +21,7 @@ public class App {
         FlinkStudyProduceService kafkaProducerService = context.getBean(FlinkStudyProduceService.class);
         // 发送消息
         for(int i = 0; i < 3; i++) {
-            System.out.println("发送消息" + i);
+            log.info("开始发送消息，第{}条", i);
             kafkaProducerService.testProduce("hello world" + i);
         }
 

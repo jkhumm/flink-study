@@ -4,7 +4,7 @@ vmware 15.5及以上的版本。
 
 1.打开解压后的文件夹，找到.vmx结尾的文件
 2.菜单--编辑--虚拟网络编辑器--找到NAT模式的连接方式(与虚拟机共享主机ip地址)
-![img.png](img.png)
+![img.png](../img.png)
 3.配置子网ip  192.168.222.0
 4.DHCP设置 192.168.222.128 ~ 192.168.222.254
 5.NAT设置  192.168.222.2
@@ -31,7 +31,7 @@ KAFKA
 启动kafka的服务：
 kafka的分布式通过zookeeper的方式实现的。
 1.先启动zookeeper服务：
-$KAFKA等价于/home/kafka_2.12-2.7.0
+$KAFKA 等价于 /home/kafka_2.12-2.7.0
 $KAFKA/bin/zookeeper-server-start.sh $KAFKA/config/zookeeper.properties >> zookeeper.log &
 cat /home/kafka_2.12-2.7.0/zookeeper.log 查看zk日志
 

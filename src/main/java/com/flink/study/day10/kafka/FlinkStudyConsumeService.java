@@ -16,6 +16,6 @@ public class FlinkStudyConsumeService {
     public void consume(ConsumerRecord<String, String> record) {
         String key = record.key();
         String value = record.value();
-        System.out.println("key:" + key + "value:" + value);
+        log.info("key:" + key + "  value:" + value);
     }
 }

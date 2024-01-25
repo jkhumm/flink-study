@@ -1,7 +1,6 @@
 package com.flink.study.day10.kafka;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,6 @@ import java.util.UUID;
 public class FlinkStudyProduceService {
 
     @Resource
-    @Qualifier("flinkStudyTemplate")
     private KafkaTemplate<String, String> flinkStudyTemplate;
 
     public static final String topic = "test-topic";
