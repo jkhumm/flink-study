@@ -1,4 +1,4 @@
-package com.flink.study.day10;
+package com.flink.study.day10.kafka;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
@@ -13,7 +13,7 @@ import java.util.Properties;
  * @author humingming
  * @date 2024/1/24 21:56
  */
-public class KafkaTest2 {
+public class KafkaTest {
 
     public static void func() throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
