@@ -1,0 +1,3 @@
+apple orange pear
+banana lemon apple
+pear peach orange

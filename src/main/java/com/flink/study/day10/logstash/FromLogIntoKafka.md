@@ -6,6 +6,24 @@ cd /home/logstash-7.9.2
 读取日志文件，先创建日志文件，然后创建logstash的配置文件
 
 配置文件
+也可以先配这个试下，意思是在屏幕上输入什么就作为数据源输出什么
+```shell
+input { stdin { } }
+
+filter {
+  grok {
+    match => { "message" => "%{COMBINEDAPACHELOG}" }
+  }
+  date {
+    match => [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]
+  }
+}
+ 
+output {
+  stdout { codec => rubydebug }
+}
+```
+
 ```text
 input {
     file {
@@ -58,8 +76,7 @@ sh /home/kafka_2.12-2.7.0/bin/kafka-console-consumer.sh  --bootstrap-server  192
 
 # 启动kafka完成后，启动logstash
 ```shell
-/home/logstash-7.9.2/bin/logstash -f logstash.conf /home/logstash-7.9.2/humm/t1.conf
-
+/home/logstash-7.9.2/bin/logstash -f /home/logstash-7.9.2/humm/t1.conf
 ```
 
 # 写入数据，后查看kafka消费者会打印对应写入数据
